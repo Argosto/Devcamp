@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @magic.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @magic.body %>
+</p>
+
+<%= link_to 'Edit', edit_magic_path(@magic) %> |
+<%= link_to 'Back', magics_path %>
