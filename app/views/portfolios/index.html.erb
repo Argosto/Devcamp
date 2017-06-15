@@ -3,5 +3,5 @@
 <% @port.each do |porty| %>
   <p><%= porty.subtitle %></p>
   <p><%= porty.body %></p>
-  <%= image_tag porty.thumb_image %>
+  <%= image_tag porty.thumb_image if !porty.thumb_image.nil? %>
 <% end %>
