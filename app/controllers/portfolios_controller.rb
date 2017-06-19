@@ -19,5 +19,21 @@ class PortfoliosController < ApplicationController
       end
     end
   end
+  
+  def edit 
+    @port = Portfolio.find(params[:id])
+  end
+  
+  def update
+    @port = Portfolio.find(params[:id])
+    
+    respond_to do |format|
+      if @port.update(params.require(:portfolio).permit(:subtitle, :body))
+        format.html { redirect_to portfolios_path, notice: 'Magic was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
 
 end
