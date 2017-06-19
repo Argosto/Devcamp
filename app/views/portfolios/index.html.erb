@@ -3,7 +3,7 @@
 <%= link_to "Create New", new_portfolio_path %>
 
 <% @port.each do |porty| %>
-  <p><%= porty.subtitle %></p>
+  <p><%= link_to porty.subtitle, portfolio_path(porty) %></p>
   <p><%= porty.body %></p>
   <%= image_tag porty.thumb_image if !porty.thumb_image.nil? %>
   <%= link_to "Edit", edit_portfolio_path(porty.id) %>
