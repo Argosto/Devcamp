@@ -29,10 +29,8 @@ class MagicsController < ApplicationController
     respond_to do |format|
       if @magic.save
         format.html { redirect_to @magic, notice: 'Magic was successfully created.' }
-        format.json { render :show, status: :created, location: @magic }
       else
         format.html { render :new }
-        format.json { render json: @magic.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +41,8 @@ class MagicsController < ApplicationController
     respond_to do |format|
       if @magic.update(magic_params)
         format.html { redirect_to @magic, notice: 'Magic was successfully updated.' }
-        format.json { render :show, status: :ok, location: @magic }
       else
         format.html { render :edit }
-        format.json { render json: @magic.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +53,6 @@ class MagicsController < ApplicationController
     @magic.destroy
     respond_to do |format|
       format.html { redirect_to magics_url, notice: 'Magic was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

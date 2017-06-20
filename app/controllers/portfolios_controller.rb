@@ -29,7 +29,7 @@ class PortfoliosController < ApplicationController
     
     respond_to do |format|
       if @port.update(params.require(:portfolio).permit(:subtitle, :body))
-        format.html { redirect_to portfolios_path, notice: 'Magic was successfully updated.' }
+        format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -38,6 +38,14 @@ class PortfoliosController < ApplicationController
   
   def show
     @port = Portfolio.find(params[:id])
+  end
+  
+  def destroy
+    @port = Portfolio.find(params[:id])
+    @port.destroy
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'Portfolio was successfully destroyed.' }
+    end
   end
 
 

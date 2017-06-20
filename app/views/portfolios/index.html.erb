@@ -6,5 +6,6 @@
   <p><%= link_to porty.subtitle, portfolio_path(porty) %></p>
   <p><%= porty.body %></p>
   <%= image_tag porty.thumb_image if !porty.thumb_image.nil? %>
-  <%= link_to "Edit", edit_portfolio_path(porty.id) %>
+  <%= link_to "Edit", edit_portfolio_path(porty) %>
+  <%= link_to 'Destroy', portfolio_path(porty), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
