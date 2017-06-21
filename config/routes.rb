@@ -7,8 +7,13 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'pages#contact'
 
-  resources :magics
+  resources :magics do
+    member do
+      get :toggle_status
+    end
+  end
   
   root to: 'pages#home'
   
 end
+

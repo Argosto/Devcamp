@@ -1,5 +1,6 @@
 class MagicsController < ApplicationController
-  before_action :set_magic, only: [:show, :edit, :update, :destroy]
+  before_action :set_magic, only: [:show, :edit, :update, :destroy, :toggle_status
+  ]
 
   # GET /magics
   # GET /magics.json
@@ -55,6 +56,15 @@ class MagicsController < ApplicationController
       format.html { redirect_to magics_url, notice: 'Magic was successfully destroyed.' }
     end
   end
+  
+  def toggle_status
+    if @magic.draft?
+      @magic.published!
+    elsif @magic.published?
+      @magic.draft!
+    end
+    redirect_to magics_url, notice: 'Post status has been updated.'
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -66,4 +76,6 @@ class MagicsController < ApplicationController
     def magic_params
       params.require(:magic).permit(:title, :body)
     end
+    
+    
 end
