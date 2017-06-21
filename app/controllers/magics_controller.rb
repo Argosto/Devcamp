@@ -59,7 +59,7 @@ class MagicsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_magic
-      @magic = Magic.find(params[:id])
+      @magic = Magic.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
