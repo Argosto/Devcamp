@@ -1,8 +1,9 @@
 <h1>Show</h1>
 
 <%# @port.id do |porty| %>
+  <p><%= @port.title %></p>
   <p><%= @port.subtitle %></p>
   <p><%= @port.body %></p>
-  <%= image_tag @port.thumb_image if !@port.thumb_image.nil? %>
+  <%= image_tag @port.main_image if !@port.main_image.nil? %>
   <%= link_to "Edit", edit_portfolio_path(@port.id) %>
  <%# end %>
