@@ -4,12 +4,17 @@ class PortfoliosController < ApplicationController
     @port = Portfolio.all
   end
   
+  def angular
+    @angular_port = Portfolio.angular
+  end
+
+  
   def new
     @port = Portfolio.new
   end
   
   def create
-    @port = Portfolio.new(params.require(:portfolio).permit(:subtitle, :body))
+    @port = Portfolio.new(params.require(:portfolio).permit(:title,:subtitle, :body))
 
     respond_to do |format|
       if @port.save
@@ -28,7 +33,7 @@ class PortfoliosController < ApplicationController
     @port = Portfolio.find(params[:id])
     
     respond_to do |format|
-      if @port.update(params.require(:portfolio).permit(:subtitle, :body))
+      if @port.update(params.require(:portfolio).permit(:title,:subtitle, :body))
         format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully updated.' }
       else
         format.html { render :edit }
