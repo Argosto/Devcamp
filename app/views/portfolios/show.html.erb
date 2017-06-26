@@ -6,4 +6,8 @@
   <p><%= @port.body %></p>
   <%= image_tag @port.main_image if !@port.main_image.nil? %>
   <%= link_to "Edit", edit_portfolio_path(@port.id) %>
- <%# end %>
+  
+  <h2>Tech used:</h2>
+  <% @port.technologies.each do |t| %>
+    <p><%= t.name %></p>
+  <% end %>
