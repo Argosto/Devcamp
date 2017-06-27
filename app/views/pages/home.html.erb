@@ -1,4 +1,9 @@
-<h1>HomePage Controller</h1>
+<h1><% if current_user %>
+    Hi, <%= current_user.first_name %> 
+  <% else %>
+    Welcome to Home page!
+  <% end %>
+</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 <h1>Blogs</h1>
 <%= @magics.inspect %>
