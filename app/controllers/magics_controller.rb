@@ -1,6 +1,6 @@
 class MagicsController < ApplicationController
-  before_action :set_magic, only: [:show, :edit, :update, :destroy, :toggle_status
-  ]
+  before_action :set_magic, only: [:show, :edit, :update, :destroy, :toggle_status]
+  layout "magic"
 
   # GET /magics
   # GET /magics.json
@@ -12,8 +12,8 @@ class MagicsController < ApplicationController
   # GET /magics/1
   # GET /magics/1.json
   def show
-    @page_title = @blog.title
-    @seo_keywords = @blog.body
+    @page_title = @magic.title
+    @seo_keywords = @magic.body
   end
 
   # GET /magics/new
