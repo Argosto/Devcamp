@@ -6,11 +6,14 @@ class MagicsController < ApplicationController
   # GET /magics.json
   def index
     @magics = Magic.all
+    @page_title = "My Portfolio Blog"
   end
 
   # GET /magics/1
   # GET /magics/1.json
   def show
+    @page_title = @blog.title
+    @seo_keywords = @blog.body
   end
 
   # GET /magics/new
