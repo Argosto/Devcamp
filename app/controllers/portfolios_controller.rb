@@ -30,6 +30,7 @@ class PortfoliosController < ApplicationController
   
   def edit 
     @port = Portfolio.find(params[:id])
+    
   end
   
   def update
