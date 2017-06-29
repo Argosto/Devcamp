@@ -1,0 +1,9 @@
+<tr>
+  <td><%= magic.title.upcase %></td>
+  <td>Published <%= distance_of_time_in_words(magic.created_at, Time.now) %></td>
+  <td><%= magic.body %></td>
+  <td><%= link_to magic.status, toggle_status_magic_path(magic) %></td>
+  <td><%= link_to 'Show', magic %></td>
+  <td><%= link_to 'Edit', edit_magic_path(magic) %></td>
+  <td><%= link_to 'Delete Post', magic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

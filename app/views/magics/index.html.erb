@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Date</th>
       <th>Body</th>
       <th colspan="4"></th>
     </tr>
@@ -13,14 +14,7 @@
 
   <tbody>
     <% @magics.each do |magic| %>
-      <tr>
-        <td><%= magic.title.upcase %></td>
-        <td><%= magic.body %></td>
-        <td><%= link_to magic.status,toggle_status_magic_path(magic)%></td>
-        <td><%= link_to 'Show', magic %></td>
-        <td><%= link_to 'Edit', edit_magic_path(magic) %></td>
-        <td><%= link_to 'Destroy', magic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= render @magics %>
     <% end %>
   </tbody>
 </table>

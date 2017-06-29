@@ -1,13 +1,13 @@
 <h1>Show</h1>
 
 <%# @port.id do |porty| %>
-  <p><%= @port.title %></p>
-  <p><%= @port.subtitle %></p>
-  <p><%= @port.body %></p>
-  <%= image_tag @port.main_image if !@port.main_image.nil? %>
-  <%= link_to "Edit", edit_portfolio_path(@port.id) %>
+  <p><%= @portfolio_items.title %></p>
+  <p><%= @portfolio_items.subtitle %></p>
+  <p><%= @portfolio_items.body %></p>
+  <%= image_tag @portfolio_items.main_image if !@portfolio_items.main_image.nil? %>
+  <%= link_to "Edit", edit_portfolio_path(@portfolio_items.id) %>
   
   <h2>Tech used:</h2>
-  <% @port.technologies.each do |t| %>
+  <% @portfolio_items.technologies.each do |t| %>
     <p><%= t.name %></p>
   <% end %>

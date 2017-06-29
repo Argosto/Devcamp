@@ -2,7 +2,7 @@
 
 <%= link_to "Create New", new_portfolio_path %>
 
-<% @angular_port.each do |porty| %>
+<% @angular_portfolio_items.each do |porty| %>
   <h1><%= link_to porty.title, portfolio_show_path(porty) %></h1>
   <p><%= porty.subtitle%></p>
   <p><%= porty.body %></p>
