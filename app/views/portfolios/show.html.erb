@@ -5,7 +5,7 @@
   <p><%= @portfolio_items.subtitle %></p>
   <p><%= @portfolio_items.body %></p>
   <%= image_tag @portfolio_items.main_image if !@portfolio_items.main_image.nil? %>
-  <%= link_to "Edit", edit_portfolio_path(@portfolio_items.id) %>
+  <%= link_to "Edit", edit_portfolio_path(@portfolio_items.id) if logged_in?(:site_admin)%>
   
   <h2>Tech used:</h2>
   <% @portfolio_items.technologies.each do |t| %>

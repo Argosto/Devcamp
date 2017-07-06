@@ -1,6 +1,7 @@
 class MagicsController < ApplicationController
   before_action :set_magic, only: [:show, :edit, :update, :destroy, :toggle_status]
   layout "magic"
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   # GET /magics
   # GET /magics.json

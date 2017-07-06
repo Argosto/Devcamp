@@ -7,6 +7,6 @@
   <p><%= porty.subtitle%></p>
   <p><%= porty.body %></p>
   <%= image_tag porty.thumb_image if !porty.thumb_image.nil? %>
-  <%= link_to "Edit", edit_portfolio_path(porty) %>
-  <%= link_to 'Destroy', portfolio_path(porty), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to "Edit", edit_portfolio_path(porty) if logged_in?(:site_admin)%>
+  <%= link_to 'Destroy', portfolio_path(porty), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)%>
 <% end %>

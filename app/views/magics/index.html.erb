@@ -21,4 +21,4 @@
 
 <br>
 
-<%= link_to 'New Magic', new_magic_path %>
+<%= link_to 'New Magic', new_magic_path if logged_in?(:site_admin) %>
