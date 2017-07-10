@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/Argosto/CopyrightTool
+  revision: f4b0b68da1718d8e92538a7a9d8a272b35bf227b
+  specs:
+    copyright-tool-argosto (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -173,6 +179,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
+  copyright-tool-argosto!
   devise (~> 4.3)
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.5)

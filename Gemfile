@@ -57,3 +57,5 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'devise', '~> 4.3'
 
 gem 'petergate', '~> 1.7', '>= 1.7.5'
+
+gem 'copyright-tool-argosto', git: 'https://github.com/Argosto/CopyrightTool'
