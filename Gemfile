@@ -59,3 +59,5 @@ gem 'devise', '~> 4.3'
 gem 'petergate', '~> 1.7', '>= 1.7.5'
 
 gem 'copyright-tool-argosto', git: 'https://github.com/Argosto/CopyrightTool'
+
+gem 'bootstrap', '~> 4.0.0.alpha6'
