@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="col-sm-8 blog-main">
 
-<p>
-  <strong>Title:</strong>
-  <%= @magic.title %>
-</p>
+  <h2><%= @magic.title %></h2>
 
-<p>
-  <strong>Body:</strong>
-  <%= @magic.body %>
-</p>
+  <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
 
-<%= link_to 'Edit', edit_magic_path(@magic) if logged_in?(:site_admin)%> |
-<%= link_to 'Back', magics_path %>
+  <p>
+    <%= @magic.body %>
+  </p>
+
+</div>
