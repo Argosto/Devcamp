@@ -22,20 +22,17 @@
       <div class="container">
         <h1 class="blog-title">My Blog</h1>
         <p class="lead blog-description">Record events.</p>
-        <%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %>
+        <%= link_to 'Write a New Blog', new_magic_path if logged_in?(:site_admin) %>
       </div>
     </div>
     
     <div class="container">
 
       <div class="row">
-    
-        <%= login_helper %>
         
         <%= yield %>
         
         <%= render 'shared/blog_sidebar' %>
-      </div>
         
         <footer class="blog-footer">
           <p>Blog template built for <a href="https://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
@@ -43,8 +40,10 @@
             <a href="#">Back to top</a>
           </p>
         </footer>
+      </div>
         
-        <%= render "shared/nav", location: 'bottom' %>
+        
+
         
         <%= source_helper("application") %>
         
