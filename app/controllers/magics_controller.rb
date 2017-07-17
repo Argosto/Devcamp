@@ -6,8 +6,9 @@ class MagicsController < ApplicationController
   # GET /magics
   # GET /magics.json
   def index
-    @magics = Magic.all
+    @magics = Magic.page(params[:page]).per(5)
     @page_title = "My Portfolio Blog"
+    
   end
 
   # GET /magics/1
