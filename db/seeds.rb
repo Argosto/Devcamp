@@ -28,8 +28,8 @@ puts "5 portfolios created."
     title:"Portfolio#{lassy}",
     subtitle:"Ruby on Rails",
     body:"Kopplye janes and marty.",
-    main_image:"http://placehold.it/800x600",
-    thumb_image:"http://placehold.it/200x100"
+    main_image:"http://placehold.it/600x400",
+    thumb_image:"http://placehold.it/250x200"
     )
 end
 
