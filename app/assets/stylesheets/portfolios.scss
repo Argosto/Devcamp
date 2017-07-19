@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import "jquery-ui";
+
 body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
 }
@@ -62,4 +64,8 @@ footer p {
 
 .portfolio-form {
   padding: 20px;
+}
+
+.link-color a {
+  color: #90c;
 }
