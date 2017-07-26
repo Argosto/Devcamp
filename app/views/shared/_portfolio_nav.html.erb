@@ -1,4 +1,4 @@
-<div class="collapse bg-inverse" id="navbarHeader">
+<!--<div class="collapse bg-inverse" id="navbarHeader">
   <div class="container">
     <div class="row">
       <div class="col-sm-8 py-4">
@@ -23,4 +23,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
-</div>
+</div> -->
+
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <a class="navbar-brand" href="#">Miles Jackson</a>
+  <div class="navbar-nav navbar-toggler-right">
+    <%= nav_helper 'nav-link', 'span' %>
+    <%= login_helper 'nav-link' %>
+  </div>
+</nav>
