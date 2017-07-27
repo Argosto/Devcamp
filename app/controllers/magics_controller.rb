@@ -14,6 +14,9 @@ class MagicsController < ApplicationController
   # GET /magics/1
   # GET /magics/1.json
   def show
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
+ 
     @page_title = @magic.title
     @seo_keywords = @magic.body
   end
