@@ -6,9 +6,12 @@ class MagicsController < ApplicationController
   # GET /magics
   # GET /magics.json
   def index
-    @magics = Magic.page(params[:page]).per(5)
+    if logged_in?(:site_admin)
+      @blogs = Blog.recent.page(params[:page]).per(5)
+    else
+      @blogs = Blog.published.recent.page(params[:page]).per(5)
+    end
     @page_title = "My Portfolio Blog"
-    
   end
 
   # GET /magics/1
