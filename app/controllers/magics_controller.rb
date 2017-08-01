@@ -14,11 +14,15 @@ class MagicsController < ApplicationController
   # GET /magics/1
   # GET /magics/1.json
   def show
-    @magic = Magic.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
- 
-    @page_title = @magic.title
-    @seo_keywords = @magic.body
+    if logged_in?(:site_admin) || @blog.published?
+      @magic = Magic.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
+   
+      @page_title = @magic.title
+      @seo_keywords = @magic.body
+    else
+      redirect_to blogs_path, notice: "You are not authorized to access this page"
+    end
   end
 
   # GET /magics/new
