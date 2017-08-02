@@ -1,4 +1,7 @@
 class TopicsController < ApplicationController
+  
+  before_action :set_sidebar_topics
+  
   layout 'magic'
 
   def index
@@ -13,5 +16,11 @@ class TopicsController < ApplicationController
     else
       @magics = @topic.magics.published.recent.page(params[:page]).per(5)
     end
+  end
+  
+  private
+
+  def set_sidebar_topics
+    @side_bar_topics = Topic.with_blogs
   end
 end

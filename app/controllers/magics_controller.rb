@@ -1,5 +1,6 @@
 class MagicsController < ApplicationController
   before_action :set_magic, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_sidebar_topics, except: [:update, :create, :destroy, :toggle_status]
   layout "magic"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
@@ -92,5 +93,8 @@ class MagicsController < ApplicationController
       params.require(:magic).permit(:title, :body, :topic_id)
     end
     
+    def set_sidebar_topics
+      @side_bar_topics = Topic.with_blogs
+    end
     
 end
