@@ -1,6 +1,18 @@
 <div class="col-sm-8 blog-main">
 
   <h2><%= @magic.title %></h2>
+  
+  <nav class="breadcrumb">
+    <%= link_to "Home", root_path, class: 'breadcrumb-item' %>
+    <%= link_to @magic.topic.title, topic_path(@magic.topic), class: 'breadcrumb-item' %>
+
+    <span class="breadcrumb-item active"><%= @magic.title %></span>
+
+    <span class="pull-right">
+      <%= link_to fa_icon('pencil-square-o'), edit_magic_path(@magic) if logged_in?(:site_admin) %>
+      <%= link_to fa_icon('trash'), @magic, method: :delete, data: { confirm: 'Are you sure you want to delete this post' } if logged_in?(:site_admin) %>
+    </span>
+  </nav>
 
   <%= link_to 'Edit', edit_magic_path(@magic) if logged_in?(:site_admin) %>
 
