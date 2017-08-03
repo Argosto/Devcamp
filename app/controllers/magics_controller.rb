@@ -90,7 +90,7 @@ class MagicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def magic_params
-      params.require(:magic).permit(:title, :body, :topic_id)
+      params.require(:magic).permit(:title, :body, :topic_id, :status)
     end
     
     def set_sidebar_topics
