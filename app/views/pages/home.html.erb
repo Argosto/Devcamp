@@ -1,9 +1,18 @@
 <div class="inner cover">
     <h1 class="cover-heading">Welcome!</h1>
     <p class="lead">Here you are able to see what I've accomplished in this boring class.</p>
-    <p class="lead">
-        <%= link_to "About Me", about_path, class: 'btn btn-lg btn-secondary' %>
-    </p>
+    <div class="badge">   
+        <div class="col-md-5">
+            <%= link_to "About Me", about_path, class: 'btn btn-lg btn-outline-secondary' %>
+            <%= link_to "Contact Me", contact_path, class: 'btn btn-lg btn-outline-secondary' %>
+        </div>
+        <div class="col-md-2"></div>
+        <div class = "col-md-5">
+            <%= link_to "Blog", magics_path, class: 'btn btn-lg btn-outline-secondary' %>
+            <%= link_to "Portfolio", portfolios_path, class: 'btn btn-lg btn-outline-secondary' %>
+            <%= link_to "News", news_path, class: 'btn btn-lg btn-outline-secondary' %>
+        </div>
+    </div>
 </div>
 
 

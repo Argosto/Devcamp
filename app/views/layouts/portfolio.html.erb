@@ -16,13 +16,12 @@
     
   </head>
   <body>
-    
+    <div id="background"></div>
     <%= render 'shared/portfolio_nav' %>
     <%= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
-    
     <%= yield %>
-    
-    <%= render 'shared/portfolio_footer' %>
-    
+    <div class="card">
+      <%= render 'shared/portfolio_footer' %>
+    </div>
   </body>
 </html>
